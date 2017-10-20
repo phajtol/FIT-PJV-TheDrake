@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ceckari.thedrake;
+
 
 /**
  *
- * @author peter
+ * @author friedtad & hajtopet
  */
-public enum TroopFace {
+public enum TroopFace
+{
     FRONT,BACK;
 }

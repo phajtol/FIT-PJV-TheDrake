@@ -1,40 +1,100 @@
 package ceckari.thedrake;
 
+
+/**
+ *
+ * @author friedtad & hajtopet
+ */
 public class TilePosition {
+
+	/**
+	 *
+	 */
 	public final int i;
 	public final int j;
 
-	public TilePosition(int i, int j) {
+
+	/**
+	 *
+	 * @param i
+	 * @param j
+	 */
+	public TilePosition(int i, int j)
+	{
 		this.i = i;
 		this.j = j;
 	}
 
-	public TilePosition(char column, int row) {
+
+	/**
+	 *
+	 * @param column
+	 * @param row
+	 */
+	public TilePosition(char column, int row)
+	{
 		this.i = iFromColumn(column);
 		this.j = jFromRow(row);
 	}
 
-	public TilePosition(String pos) {
+
+	/**
+	 *
+	 * @param pos
+	 */
+	public TilePosition(String pos)
+	{
 		this(pos.charAt(0), Integer.parseInt(pos.substring(1)));
 	}
 
-	public char column() {
+
+	/**
+	 *
+	 * @return
+	 */
+	public char column()
+	{
 		return (char) ('a' + i);
 	}
 
-	public int row() {
+
+	/**
+	 *
+	 * @return
+	 */
+	public int row()
+	{
 		return j + 1;
 	}
 
-	public TilePosition step(int columnStep, int rowStep) {
+
+	/**
+	 *
+	 */
+	public TilePosition step(int columnStep, int rowStep)
+	{
 		return new TilePosition(i + columnStep, j + rowStep);
 	}
 
-	public TilePosition step(Offset2D step) {
+
+	/**
+	 *
+	 * @param step
+	 * @return
+	 */
+	public TilePosition step(Offset2D step)
+	{
 		return step(step.x, step.y);
 	}
 
-	public boolean isNextTo(TilePosition pos) {
+
+	/**
+	 *
+	 * @param pos
+	 * @return
+	 */
+	public boolean isNextTo(TilePosition pos)
+	{
 		if(this.i == pos.i && Math.abs(this.j - pos.j) == 1)
 			return true;
 		
@@ -43,25 +103,61 @@ public class TilePosition {
 		
 		return false;
 	}
-	
-	public boolean equalsTo(int i, int j) {
+
+
+	/**
+	 *
+	 * @param i
+	 * @param j
+	 * @return
+	 */
+	public boolean equalsTo(int i, int j)
+	{
 		return this.i == i && this.j == j;
 	}
-	
-	public boolean equalsTo(char column, int row) {
+
+
+	/**
+	 *
+	 * @param column
+	 * @param row
+	 * @return
+	 */
+	public boolean equalsTo(char column, int row)
+	{
 		return this.i == iFromColumn(column) && this.j == jFromRow(row);
 	}
 
-	private int iFromColumn(char column) {
+
+	/**
+	 *
+	 * @param column
+	 * @return
+	 */
+	private int iFromColumn(char column)
+	{
 		return column - 'a';
 	}
-	
-	private int jFromRow(int row) {
+
+
+	/**
+	 *
+	 * @param row
+	 * @return
+	 */
+	private int jFromRow(int row)
+	{
 		return row - 1;
 	}
-	
+
+
+	/**
+	 *
+	 * @return
+	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return String.format("%c%d", column(), row());
 	}
 }

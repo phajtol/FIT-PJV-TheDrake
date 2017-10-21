@@ -8,8 +8,8 @@ package ceckari.thedrake;
 public class EmptyTile extends Tile {
 
     /**
-     * Method returns position on the board.
-     * @param position - position
+     * Constructor of empty tile. Call a parent (Tile) construcor.
+     * @param position
      */
     public EmptyTile(TilePosition position) {
         super(position);

@@ -2,13 +2,14 @@ package ceckari.thedrake;
 
 
 /**
- *
+ *Class that represents one empty tile in game The Drake.
+ * @author friedtad & hajtopet
  */
 public class EmptyTile extends Tile {
 
     /**
-     *
-     * @param position
+     * Method returns position on the board.
+     * @param position - position
      */
     public EmptyTile(TilePosition position) {
         super(position);
@@ -18,7 +19,7 @@ public class EmptyTile extends Tile {
     /**
      *
      * @param troop
-     * @return
+     * @return true always for empty tile
      */
     @Override
     public boolean acceptsTroop(Troop troop) {
@@ -27,8 +28,8 @@ public class EmptyTile extends Tile {
 
 
     /**
-     *
-     * @return
+     * Method returning info about occupancy of tile
+     * @return false always for empty tile
      */
     @Override
     public boolean hasTroop() {
@@ -37,8 +38,8 @@ public class EmptyTile extends Tile {
 
 
     /**
-     *
-     * @return
+     * Method returning troop present on tile. Always throws an exception for empty tile.
+     * @return 
      */
     @Override
     public Troop troop() {

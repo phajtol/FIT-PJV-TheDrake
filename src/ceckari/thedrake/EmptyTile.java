@@ -8,7 +8,7 @@ package ceckari.thedrake;
 public class EmptyTile extends Tile {
 
     /**
-     * Constructor of empty tile. Call a parent (Tile) construcor.
+     * Constructor of empty tile. Calls a parent (Tile) construcor.
      * @param position
      */
     public EmptyTile(TilePosition position) {

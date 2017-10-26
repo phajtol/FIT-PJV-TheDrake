@@ -1,4 +1,4 @@
-package ceckari.thedrake.test;
+//package test.tester01;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;

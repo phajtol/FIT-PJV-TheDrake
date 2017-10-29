@@ -1,4 +1,18 @@
 package ceckari.thedrake;
 
-public class StepAndCapture {
+
+/**
+ * @author friedtad & hajtopet
+ */
+public class StepAndCapture extends BoardChange {
+
+    StepAndCapture(Board initialBoard, TilePosition origin, TilePosition target){
+        super(initialBoard, origin, target);
+    }
+
+
+    public Board resultBoard(){
+        return initialBoard.stepAndCapture(origin,target);
+    }
+
 }

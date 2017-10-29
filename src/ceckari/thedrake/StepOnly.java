@@ -1,4 +1,17 @@
 package ceckari.thedrake;
 
-public class StepOnly {
+
+/**
+ * @author friedtad & hajtopet
+ */
+public class StepOnly extends BoardChange {
+
+    StepOnly(Board initialBoard, TilePosition origin, TilePosition target){
+        super(initialBoard, origin, target);
+    }
+
+
+    public Board resultBoard(){
+        return initialBoard.stepOnly(origin,target);
+    }
 }

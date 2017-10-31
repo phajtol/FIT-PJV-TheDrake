@@ -11,6 +11,7 @@ public class StepOnly extends BoardChange {
     }
 
 
+    @Override
     public Board resultBoard(){
         return initialBoard.stepOnly(origin,target);
     }

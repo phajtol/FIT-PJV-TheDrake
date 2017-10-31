@@ -34,11 +34,14 @@ public class CapturedTroops {
      * @param info - newly captured troop to be added to list
      */
     private CapturedTroops(List<TroopInfo> blue, List<TroopInfo> orange, PlayingSide side, TroopInfo info){
-        this.blue = blue;
-        this.orange = orange;
-
-        if(side == PlayingSide.BLUE) blue.add(0,info);
-        else orange.add(0,info);
+        this.blue = new ArrayList<TroopInfo>();
+        this.orange = new ArrayList<TroopInfo>();
+        
+        if(side == PlayingSide.BLUE) this.blue.add(info);
+        else this.orange.add(info);
+        
+        this.blue.addAll(blue);
+        this.orange.addAll(orange);
     }
 
     /**

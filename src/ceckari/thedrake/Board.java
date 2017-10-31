@@ -22,6 +22,7 @@ public class Board {
      */
     public Board(int dimension, Tile... tiles){
         this.dimension = dimension;
+        this.captured = new CapturedTroops();
         board = new Tile[dimension][dimension];
         
         for(int i = 0; i < dimension; ++i)
@@ -38,8 +39,10 @@ public class Board {
      * @param dimension
      * @param tiles
      */
-    private Board(int dimension, Tile[][] tiles){
+    private Board(int dimension, Tile[][] tiles, CapturedTroops captured){
         this.dimension = dimension;
+        this.captured = captured;
+        
         board = tiles.clone();
         for(int i = 0; i < dimension; ++i)
             board[i] = tiles[i].clone();
@@ -86,14 +89,14 @@ public class Board {
      */
     public Board withTiles(Tile... tiles){
         Tile[][] newTiles = board.clone();
-
-        for(int i = 0; i < dimension; ++i)
+            
+        for (int i = 0; i < dimension; ++i)
             newTiles[i] = board[i].clone();
-
-        for(Tile t : tiles)
+            
+        for (Tile t : tiles)
             newTiles[t.position().i][t.position().j] = t;
-
-        return new Board(dimension, newTiles);
+        
+        return new Board(dimension, newTiles, captured);
     }
 
 
@@ -105,8 +108,17 @@ public class Board {
      * @return - new board
      */
     public Board withCaptureAndTiles(TroopInfo info, PlayingSide side, Tile... tiles){
-        captured = captured.withTroop(side,info);
-        return withTiles(tiles);
+        if(info == null || side == null) throw new IllegalArgumentException("withCaptureAndTiles: info or side are null!");
+        
+        Tile[][] newTiles = board.clone();
+            
+        for (int i = 0; i < dimension; ++i)
+            newTiles[i] = board[i].clone();
+            
+        for (Tile t : tiles)
+            newTiles[t.position().i][t.position().j] = t;
+            
+        return new Board(dimension, newTiles, captured.withTroop(side,info));
     }
 
 
@@ -116,8 +128,12 @@ public class Board {
      * @return - true if there's unit on the given position, false otherwise
      */
     public boolean canTakeFrom(TilePosition origin){
-        if(tileAt(origin) instanceof EmptyTile) return false;
-        return true;
+        try {
+            if(tileAt(origin) instanceof EmptyTile) return false;
+            return true;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
     }
 
 
@@ -127,8 +143,12 @@ public class Board {
      * sem jednotka může vstoupit pokud ji hráč bere ze zásobníku.
      */
     public boolean canPlaceTo(Troop troop, TilePosition target){
-        if(tileAt(target) instanceof EmptyTile) return true;
-        return false;
+        try {
+            if (tileAt(target) instanceof EmptyTile) return true;
+            return false;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
     }
 
 
@@ -144,8 +164,12 @@ public class Board {
      * bez toho, aby tam zajala soupeřovu jednotku?
      */
     public boolean canStepOnly(TilePosition origin, TilePosition target){
-        if((tileAt(origin) instanceof TroopTile) && !tileAt(target).hasTroop()) return true;
-        return false;
+        try {
+            if ((tileAt(origin) instanceof TroopTile) && !tileAt(target).hasTroop()) return true;
+            return false;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
     }
 
 
@@ -154,8 +178,12 @@ public class Board {
      * a zajmout soupeřovu jednotku na pozici target?
      */
     public boolean canCaptureOnly(TilePosition origin, TilePosition target){
-        if(tileAt(target).hasTroop() && (tileAt(target).troop().side() == tileAt(origin).troop().side().opposite())) return true;
-        return false;
+        try {
+            if (tileAt(target).hasTroop() && (tileAt(target).troop().side() == tileAt(origin).troop().side().opposite())) return true;
+            return false;
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
     }
 
 
@@ -164,7 +192,11 @@ public class Board {
      * a zajmout tam soupeřovu jednotku?
      */
     public boolean canStepAndCapture(TilePosition origin, TilePosition target){
-        return canStepOnly(origin,target) && canCaptureOn(tileAt(origin).troop(),target);
+        try {
+            return tileAt(origin).hasTroop() && tileAt(target).hasTroop() && (tileAt(origin).troop().side() == tileAt(target).troop().side().opposite());
+        } catch (IllegalArgumentException e) {
+            return false;
+        }
     }
 
 
@@ -189,11 +221,11 @@ public class Board {
      */
     public Board stepAndCapture(TilePosition origin, TilePosition target){
         Troop attacker = tileAt(origin).troop();
-        Troop targetTroop = tileAt(target).troop();
-
+        Troop captured = tileAt(target).troop();
+        
         return withCaptureAndTiles(
-                targetTroop.info(),
-                targetTroop.side(),
+                captured.info(),
+                captured.side(),
                 new EmptyTile(origin),
                 new TroopTile(target, attacker.flipped())
         );
@@ -209,7 +241,8 @@ public class Board {
         return  withCaptureAndTiles(
                 targetTroop.info(),
                 targetTroop.side(),
-                new EmptyTile(target)
+                new EmptyTile(target),
+                new TroopTile(origin,tileAt(origin).troop().flipped())
         );
     }
     

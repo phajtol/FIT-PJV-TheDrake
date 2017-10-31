@@ -10,7 +10,7 @@ public class CaptureOnly extends BoardChange {
         super(initialBoard, origin, target);
     }
 
-
+    @Override
     public Board resultBoard(){
         return initialBoard.captureOnly(origin,target);
     }

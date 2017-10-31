@@ -10,7 +10,7 @@ public class StepAndCapture extends BoardChange {
         super(initialBoard, origin, target);
     }
 
-
+    @Override
     public Board resultBoard(){
         return initialBoard.stepAndCapture(origin,target);
     }

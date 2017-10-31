@@ -6,7 +6,7 @@ package ceckari.thedrake;
  */
 public class StepOnly extends BoardChange {
 
-    StepOnly(Board initialBoard, TilePosition origin, TilePosition target){
+    public StepOnly(Board initialBoard, TilePosition origin, TilePosition target){
         super(initialBoard, origin, target);
     }
 

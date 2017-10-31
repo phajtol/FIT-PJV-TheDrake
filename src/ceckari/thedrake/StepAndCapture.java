@@ -6,7 +6,7 @@ package ceckari.thedrake;
  */
 public class StepAndCapture extends BoardChange {
 
-    StepAndCapture(Board initialBoard, TilePosition origin, TilePosition target){
+    public StepAndCapture(Board initialBoard, TilePosition origin, TilePosition target){
         super(initialBoard, origin, target);
     }
 

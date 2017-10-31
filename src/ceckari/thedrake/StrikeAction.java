@@ -10,12 +10,12 @@ public class StrikeAction implements TroopAction {
 
     private final Offset2D position;
 
-    StrikeAction(int dirX, int dirY){
+    public StrikeAction(int dirX, int dirY){
         this(new Offset2D(dirX, dirY));
     }
 
 
-    StrikeAction(Offset2D position){
+    public StrikeAction(Offset2D position){
         this.position = position;
     }
 

@@ -212,5 +212,10 @@ public class Board {
                 new EmptyTile(target)
         );
     }
+    
+    
+    public CapturedTroops captured(){
+        return captured;
+    }
 
 }

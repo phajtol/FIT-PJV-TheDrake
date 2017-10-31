@@ -6,7 +6,7 @@ package ceckari.thedrake;
  */
 public class CaptureOnly extends BoardChange {
 
-    CaptureOnly(Board initialBoard, TilePosition origin, TilePosition target){
+    public CaptureOnly(Board initialBoard, TilePosition origin, TilePosition target){
         super(initialBoard, origin, target);
     }
 

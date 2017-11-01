@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/users/f/friedtad/NetBeansProjects/PJVDrake/src/ceckari/thedrake/TroopInfo.java</file>
-            <file>file:/home/users/f/friedtad/NetBeansProjects/PJVDrake/src/ceckari/thedrake/TilePosition.java</file>
-            <file>file:/home/users/f/friedtad/NetBeansProjects/PJVDrake/src/ceckari/thedrake/Tile.java</file>
-            <file>file:/home/users/f/friedtad/NetBeansProjects/PJVDrake/src/ceckari/thedrake/EmptyTile.java</file>
-            <file>file:/home/users/f/friedtad/NetBeansProjects/PJVDrake/src/ceckari/thedrake/Board.java</file>
-            <file>file:/home/users/f/friedtad/NetBeansProjects/PJVDrake/src/ceckari/thedrake/TroopTile.java</file>
-            <file>file:/home/users/f/friedtad/NetBeansProjects/PJVDrake/src/ceckari/thedrake/Offset2D.java</file>
+            <file>file:/Users/peter/git/PJV-TheDrake/test/test/Tester03.java</file>
+            <file>file:/Users/peter/git/PJV-TheDrake/test/test/TestSuite.java</file>
+            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/CaptureOnly.java</file>
+            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/Board.java</file>
+            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/StepOnly.java</file>
+            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/StepAndCapture.java</file>
         </group>
     </open-files>
 </project-private>

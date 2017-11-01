@@ -88,15 +88,7 @@ public class Board {
      * @return - new board
      */
     public Board withTiles(Tile... tiles){
-        Tile[][] newTiles = board.clone();
-            
-        for (int i = 0; i < dimension; ++i)
-            newTiles[i] = board[i].clone();
-            
-        for (Tile t : tiles)
-            newTiles[t.position().i][t.position().j] = t;
-        
-        return new Board(dimension, newTiles, captured);
+        return withCaptureAndTiles(null, null, tiles);
     }
 
 
@@ -108,8 +100,6 @@ public class Board {
      * @return - new board
      */
     public Board withCaptureAndTiles(TroopInfo info, PlayingSide side, Tile... tiles){
-        if(info == null || side == null) throw new IllegalArgumentException("withCaptureAndTiles: info or side are null!");
-        
         Tile[][] newTiles = board.clone();
             
         for (int i = 0; i < dimension; ++i)
@@ -118,7 +108,8 @@ public class Board {
         for (Tile t : tiles)
             newTiles[t.position().i][t.position().j] = t;
             
-        return new Board(dimension, newTiles, captured.withTroop(side,info));
+        if(info != null && side != null) return new Board(dimension, newTiles, captured.withTroop(side,info));
+        return new Board(dimension, newTiles, captured);
     }
 
 

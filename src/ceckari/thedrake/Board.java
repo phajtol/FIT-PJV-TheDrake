@@ -33,7 +33,11 @@ public class Board {
             board[t.position().i][t.position().j] = t;
     }
 
-
+    public Board(int dimension, CapturedTroops captured, Tile... tiles){
+        this(dimension, tiles);
+        this.captured=captured;
+    }
+    
     /**
      * Private constuctor to alter board.
      * @param dimension
@@ -47,7 +51,7 @@ public class Board {
         for(int i = 0; i < dimension; ++i)
             board[i] = tiles[i].clone();
     }
-
+    
 
     /**
      * @return - dimension of the board

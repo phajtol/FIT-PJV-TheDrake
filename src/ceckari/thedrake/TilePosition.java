@@ -72,4 +72,37 @@ public class TilePosition {
 	public String toString() {
 		return String.format("%c%d", column(), row());
 	}
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + this.i;
+        hash = 59 * hash + this.j;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        
+          //return this.equalsTo(obj.i, obj.j);
+        
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TilePosition other = (TilePosition) obj;
+        if (this.i != other.i) {
+            return false;
+        }
+        if (this.j != other.j) {
+            return false;
+        }
+        return true;
+    }
+        
 }

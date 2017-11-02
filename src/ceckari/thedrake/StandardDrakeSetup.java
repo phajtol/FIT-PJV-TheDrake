@@ -1,6 +1,7 @@
 package ceckari.thedrake;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class StandardDrakeSetup implements TheDrakeSetup {
@@ -9,7 +10,15 @@ public class StandardDrakeSetup implements TheDrakeSetup {
 	public List<TroopInfo> troops() {
 		return Arrays.asList(DRAKE, CLUBMAN, MONK, SPEARMAN, SWORDSMAN, ARCHER);
 	}	
-	
+	private final HashMap<String, TroopInfo> map=new HashMap<String,TroopInfo>(
+                //TODO
+        );
+        
+        @Override
+        public TroopInfo infoByName(String name){
+            
+        }
+        
 	public final TroopInfo DRAKE = new TroopInfo(
 			"Drake",
 			Arrays.asList(

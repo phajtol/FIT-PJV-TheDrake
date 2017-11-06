@@ -1,6 +1,10 @@
 package ceckari.thedrake;
 
 public class TilePosition {
+	/**
+	 * i = column
+	 * j = row
+	 */
 	public final int i;
 	public final int j;
 

@@ -5,27 +5,27 @@ import java.util.Collections;
 import java.util.List;
 
 public class PlacingGuardsGameState extends BaseGameState {
+
 	private final int guardsCount;
 	
-	public PlacingGuardsGameState(
-			Board board, 
-			TroopStacks troopStacks,
-			BothLeadersPlaced leaders, 			
-			PlayingSide sideOnTurn, 
-			int guardsCount) {
+
+	public PlacingGuardsGameState(Board board, TroopStacks troopStacks, BothLeadersPlaced leaders, PlayingSide sideOnTurn, int guardsCount) {
 		super(board, troopStacks, leaders, sideOnTurn);
 		this.guardsCount = guardsCount;
 	}
 	
+
 	public int guardsCount() {
 		return guardsCount;
 	}
 	
+
 	@Override
 	public BothLeadersPlaced leaders() {
 		return (BothLeadersPlaced)super.leaders();
 	}
 	
+
 	public boolean canPlaceGuard(Troop troop, TilePosition position) {
 		if(!board().canPlaceTo(troop, position))
 			return false;
@@ -42,6 +42,7 @@ public class PlacingGuardsGameState extends BaseGameState {
 		return hasLeaderAsNeigbour;
 	}
 	
+
 	public GameState placeGuard(TilePosition position) {
 		if(guardsCount == 3) {
 			return new MiddleGameState(
@@ -65,16 +66,19 @@ public class PlacingGuardsGameState extends BaseGameState {
 				guardsCount+1);	
 	}
 	
+
 	@Override
 	public List<Move> allMoves() {
 		return stackMoves();
 	}
+
 
 	@Override
 	public List<Move> boardMoves(TilePosition position) {
 		return Collections.emptyList();
 	}
 	
+
 	@Override
 	public List<Move> stackMoves() {
 		List<Move> result = new ArrayList<>();
@@ -87,12 +91,14 @@ public class PlacingGuardsGameState extends BaseGameState {
 		
 		return result;
 	}
+
 	
 	@Override
 	public boolean isVictory() {
 		return false;
 	}
-	
+
+
 	private boolean tryNeighbour(TilePosition origin, int xStep, int yStep) {
 		return origin.step(xStep, yStep).equals(leaders().position(sideOnTurn()));		
 	}

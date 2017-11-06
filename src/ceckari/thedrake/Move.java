@@ -1,21 +1,26 @@
 package ceckari.thedrake;
 
 public abstract class Move {
+
 	private final GameState initialState;
 	private final TilePosition target;
-	
+
+
 	public Move(GameState initialState, TilePosition target) {
 		this.initialState = initialState;
 		this.target = target;
 	}
+
 	
 	public GameState initialState() {
 		return initialState;
 	}
-	
+
+
 	public TilePosition target() {
 		return target;
 	}
+
 
 	@Override
 	public int hashCode() {
@@ -26,6 +31,7 @@ public abstract class Move {
 		result = prime * result + ((target == null) ? 0 : target.hashCode());
 		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -47,6 +53,9 @@ public abstract class Move {
 		return true;
 	}
 
+
 	public abstract GameState resultState();
+
+
 	public abstract boolean isWinning();	
 }

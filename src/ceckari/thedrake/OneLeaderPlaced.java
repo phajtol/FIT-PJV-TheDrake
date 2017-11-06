@@ -10,11 +10,13 @@ public class OneLeaderPlaced implements Leaders {
 		this.side = side;
 	}
 
+
 	@Override
 	public boolean isPlaced(PlayingSide side) {
 		return this.side == side;
 	}
-	
+
+
 	@Override
 	public TilePosition position(PlayingSide side) {
 		if(this.side == side)
@@ -22,7 +24,8 @@ public class OneLeaderPlaced implements Leaders {
 		
 		throw new UnsupportedOperationException();
 	}
-	
+
+
 	@Override
 	public boolean leaderOn(PlayingSide side, TilePosition position) {
 		if(!isPlaced(side))

@@ -6,6 +6,7 @@ public class PlaceLeader extends Move {
 		super(initialState, target);
 	}
 
+
 	@Override
 	public GameState resultState() {
 		PlacingLeadersGameState state = (PlacingLeadersGameState)initialState();
@@ -17,6 +18,7 @@ public class PlaceLeader extends Move {
 		return state.placeOrangeLeader(target());				
 	}
 	
+
 	@Override
 	public boolean isWinning() {
 		return false;

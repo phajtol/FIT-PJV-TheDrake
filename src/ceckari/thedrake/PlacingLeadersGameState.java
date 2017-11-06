@@ -13,11 +13,13 @@ public class PlacingLeadersGameState extends BaseGameState {
 				new NoLeadersPlaced(),						
 				PlayingSide.BLUE); 
 	}
-	
+
+
 	public PlacingLeadersGameState(Board board, TroopStacks troopStacks, Leaders leaders) {
 		super(board, troopStacks, leaders, PlayingSide.ORANGE); 
 	}
-	
+
+
 	public PlacingLeadersGameState placeBlueLeader(TilePosition blueLeaderPosition) {
 		return new PlacingLeadersGameState(
 				board().withTiles(
@@ -27,7 +29,8 @@ public class PlacingLeadersGameState extends BaseGameState {
 				troopStacks().pop(PlayingSide.BLUE),
 				new OneLeaderPlaced(PlayingSide.BLUE, blueLeaderPosition));
 	}
-	
+
+
 	public PlacingGuardsGameState placeOrangeLeader(TilePosition orangeLeaderPosition) {
 		return new PlacingGuardsGameState(
 				board().withTiles(
@@ -42,16 +45,19 @@ public class PlacingLeadersGameState extends BaseGameState {
 				0);
 	}
 	
+
 	@Override
 	public List<Move> allMoves() {
 		return stackMoves();
 	}
 	
+
 	@Override
 	public List<Move> boardMoves(TilePosition position) {
 		return Collections.emptyList();
 	}
 	
+
 	@Override
 	public List<Move> stackMoves() {		
 		int row = sideOnTurn() == PlayingSide.BLUE ? 1 : 4;
@@ -68,7 +74,8 @@ public class PlacingLeadersGameState extends BaseGameState {
 		return result;		
 	}
 	
-	@Override
+
+    @Override
 	public boolean isVictory() {
 		return false;
 	}

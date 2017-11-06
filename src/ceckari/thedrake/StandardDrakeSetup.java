@@ -11,18 +11,24 @@ public class StandardDrakeSetup implements TheDrakeSetup {
 	public List<TroopInfo> troops() {
 		return Arrays.asList(DRAKE, CLUBMAN, MONK, SPEARMAN, SWORDSMAN, ARCHER);
 	}	
-	private final Map<String, TroopInfo> map = new HashMap<String, TroopInfo>(){{
-	    put("Drake",DRAKE);
-        put("Clubman",CLUBMAN);
-        put("Monk",MONK);
-        put("Spearman",SPEARMAN);
-        put("Swordsman",SWORDSMAN);
-        put("Archer",ARCHER);
-    }};
+	private final Map<String, TroopInfo> map;
+
+
+	public StandardDrakeSetup(){
+        map = new HashMap<String, TroopInfo>();
+        map.put("Drake", DRAKE);
+        map.put("Clubman", CLUBMAN);
+        map.put("Monk", MONK);
+        map.put("Spearman", SPEARMAN);
+        map.put("Swordsman", SWORDSMAN);
+        map.put("Archer", ARCHER);
+    }
         
         @Override
         public TroopInfo infoByName(String name){
-            return map.get(name);
+            if(!map.containsKey(name))
+                throw new IllegalArgumentException("No such troop!");
+        	return map.get(name);
         }
         
 	public final TroopInfo DRAKE = new TroopInfo(

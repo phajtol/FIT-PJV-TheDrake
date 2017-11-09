@@ -1,11 +1,46 @@
 package ceckari.thedrake;
 
 
+import java.util.Iterator;
+
 /**
  * Class that represents board in game The Drake.
  * @author friedtad & hajtopet
  */
-public class Board {
+public class Board implements Iterable<Tile> {
+
+
+    /**
+     * Iterator over all the tiles on the board.
+     */
+    private class BoardIterator implements Iterator<Tile> {
+
+        private int i;
+        private int j;
+
+        public BoardIterator(){
+            this.i = this.j = 0;
+        }
+
+        @Override
+        public boolean hasNext(){
+            if(this.i == dimension || this.j == dimension) return false;
+            return true;
+        }
+
+        @Override
+        public Tile next(){
+            int oldi = i, oldj = j;
+            i++;
+            if(i == dimension){
+                i = 0;
+                j++;
+            }
+            return board[oldi][oldj];
+        }
+    }
+
+
 
     /**
      * Board consists of tiles (dimension squared) and list of captured troops.
@@ -33,7 +68,11 @@ public class Board {
             board[t.position().i][t.position().j] = t;
     }
 
-
+    public Board(int dimension, CapturedTroops captured, Tile... tiles){
+        this(dimension, tiles);
+        this.captured = captured;
+    }
+    
     /**
      * Private constuctor to alter board.
      * @param dimension
@@ -47,7 +86,7 @@ public class Board {
         for(int i = 0; i < dimension; ++i)
             board[i] = tiles[i].clone();
     }
-
+    
 
     /**
      * @return - dimension of the board
@@ -236,10 +275,21 @@ public class Board {
                 new TroopTile(origin,tileAt(origin).troop().flipped())
         );
     }
-    
-    
+
+
+    /**
+     * @return
+     */
     public CapturedTroops captured(){
         return captured;
+    }
+
+
+    /**
+     * @return - Iterator over all the tiles on the board.
+     */
+    public Iterator<Tile> iterator(){
+        return new BoardIterator();
     }
 
 }

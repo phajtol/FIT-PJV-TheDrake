@@ -1,17 +1,17 @@
-package cudlici.thedrake.media.plaintext;
+package ceckari.thedrake.media.plaintext;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import cudlici.thedrake.game.EmptyTile;
-import cudlici.thedrake.game.PlayingSide;
-import cudlici.thedrake.game.TheDrakeSetup;
-import cudlici.thedrake.game.Tile;
-import cudlici.thedrake.game.TilePosition;
-import cudlici.thedrake.game.Troop;
-import cudlici.thedrake.game.TroopFace;
-import cudlici.thedrake.game.TroopInfo;
-import cudlici.thedrake.game.TroopTile;
+import ceckari.thedrake.game.EmptyTile;
+import ceckari.thedrake.game.PlayingSide;
+import ceckari.thedrake.game.TheDrakeSetup;
+import ceckari.thedrake.game.Tile;
+import ceckari.thedrake.game.TilePosition;
+import ceckari.thedrake.game.Troop;
+import ceckari.thedrake.game.TroopFace;
+import ceckari.thedrake.game.TroopInfo;
+import ceckari.thedrake.game.TroopTile;
 
 public class TileFromPlainText {
 	private final TheDrakeSetup setup;

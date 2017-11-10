@@ -1,12 +1,12 @@
-package cudlici.thedrake.media.plaintext;
+package ceckari.thedrake.media.plaintext;
 
 import java.io.OutputStream;
 import java.io.PrintWriter;
 
-import cudlici.thedrake.game.Board;
-import cudlici.thedrake.game.Tile;
-import cudlici.thedrake.media.BoardMedia;
-import cudlici.thedrake.media.PrintMedia;
+import ceckari.thedrake.game.Board;
+import ceckari.thedrake.game.Tile;
+import ceckari.thedrake.media.BoardMedia;
+import ceckari.thedrake.media.PrintMedia;
 
 public class BoardPlainTextMedia extends PrintMedia implements BoardMedia<Void> {
 	private final TilePlainTextMedia tileMedia;
@@ -27,7 +27,7 @@ public class BoardPlainTextMedia extends PrintMedia implements BoardMedia<Void> 
 			tile.putToMedia(tileMedia);
 			w.println();
 		}
-		
+
 		capturedMedia.putCapturedTroops(board.captured());
 		
 		return null;

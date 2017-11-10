@@ -1,6 +1,8 @@
 package ceckari.thedrake.game;
 
 
+import ceckari.thedrake.media.TileMedia;
+
 /**
  * Class storing a Tile occupied by a troop.
  * @author friedtad & hajtopet
@@ -57,5 +59,15 @@ public class TroopTile extends Tile {
     {
         return troop;
     }
-    
+
+    /**
+     *
+     * @param media
+     * @param <T>
+     * @return
+     */
+    @Override
+    public <T> T putToMedia(TileMedia<T> media) {
+        return media.putTroopTile(this);
+    }
 }

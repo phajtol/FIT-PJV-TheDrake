@@ -1,6 +1,8 @@
 package ceckari.thedrake.game;
 
 
+import ceckari.thedrake.media.TileMedia;
+
 /**
  *Class that represents one empty tile in game The Drake.
  * @author friedtad & hajtopet
@@ -45,5 +47,17 @@ public class EmptyTile extends Tile {
     public Troop troop() {
         throw new UnsupportedOperationException("No troop here."); 
     }
-    
+
+
+    /**
+     *
+     * @param media
+     * @param <T>
+     * @return
+     */
+    @Override
+    public <T> T putToMedia(TileMedia<T> media) {
+        return media.putEmptyTile(this);
+    }
+
 }

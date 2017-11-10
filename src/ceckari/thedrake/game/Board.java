@@ -1,6 +1,8 @@
 package ceckari.thedrake.game;
 
 
+import ceckari.thedrake.media.BoardMedia;
+
 import java.util.Iterator;
 
 /**
@@ -290,6 +292,17 @@ public class Board implements Iterable<Tile> {
      */
     public Iterator<Tile> iterator(){
         return new BoardIterator();
+    }
+
+
+    /**
+     *
+     * @param media
+     * @param <T>
+     * @return
+     */
+    public <T> T putToMedia(BoardMedia<T> media) {
+        return media.putBoard(this);
     }
 
 }

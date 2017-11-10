@@ -1,5 +1,7 @@
 package ceckari.thedrake.game;
 
+import ceckari.thedrake.media.LeadersMedia;
+
 public class OneLeaderPlaced implements Leaders {
 	
 	private final PlayingSide side;
@@ -30,7 +32,12 @@ public class OneLeaderPlaced implements Leaders {
 	public boolean leaderOn(PlayingSide side, TilePosition position) {
 		if(!isPlaced(side))
 			return false;
-		
+
 		return position(side).equals(position);
+	}
+
+	@Override
+	public <T> T putToMedia(LeadersMedia<T> media) {
+		return media.putOneLeaderPlaced(this);
 	}
 }

@@ -1,15 +1,15 @@
-package cudlici.thedrake.media.plaintext;
+package ceckari.thedrake.media.plaintext;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import cudlici.thedrake.game.BothLeadersPlaced;
-import cudlici.thedrake.game.Leaders;
-import cudlici.thedrake.game.NoLeadersPlaced;
-import cudlici.thedrake.game.OneLeaderPlaced;
-import cudlici.thedrake.game.PlayingSide;
-import cudlici.thedrake.game.TheDrakeSetup;
-import cudlici.thedrake.game.TilePosition;
+import ceckari.thedrake.game.BothLeadersPlaced;
+import ceckari.thedrake.game.Leaders;
+import ceckari.thedrake.game.NoLeadersPlaced;
+import ceckari.thedrake.game.OneLeaderPlaced;
+import ceckari.thedrake.game.PlayingSide;
+import ceckari.thedrake.game.TheDrakeSetup;
+import ceckari.thedrake.game.TilePosition;
 
 public class LeadersFromPlainText {
 	private final BufferedReader reader;

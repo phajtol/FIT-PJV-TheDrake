@@ -1,15 +1,15 @@
-package cudlici.thedrake.media.plaintext;
+package ceckari.thedrake.media.plaintext;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import cudlici.thedrake.game.BasicTroopStacks;
-import cudlici.thedrake.game.PlayingSide;
-import cudlici.thedrake.game.TheDrakeSetup;
-import cudlici.thedrake.game.TroopInfo;
-import cudlici.thedrake.game.TroopStacks;
+import ceckari.thedrake.game.BasicTroopStacks;
+import ceckari.thedrake.game.PlayingSide;
+import ceckari.thedrake.game.TheDrakeSetup;
+import ceckari.thedrake.game.TroopInfo;
+import ceckari.thedrake.game.TroopStacks;
 
 public class TroopStacksFromPlainText {
 	private final TheDrakeSetup setup;

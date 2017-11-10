@@ -1,13 +1,13 @@
-package cudlici.thedrake.media.plaintext;
+package ceckari.thedrake.media.plaintext;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
-import cudlici.thedrake.game.Board;
-import cudlici.thedrake.game.CapturedTroops;
-import cudlici.thedrake.game.TheDrakeSetup;
-import cudlici.thedrake.game.Tile;
-import cudlici.thedrake.game.TilePosition;
+import ceckari.thedrake.game.Board;
+import ceckari.thedrake.game.CapturedTroops;
+import ceckari.thedrake.game.TheDrakeSetup;
+import ceckari.thedrake.game.Tile;
+import ceckari.thedrake.game.TilePosition;
 
 public class BoardFromPlainText {
 	private final TheDrakeSetup setup;
@@ -27,7 +27,7 @@ public class BoardFromPlainText {
 		
 		TileFromPlainText tileFromReader = new TileFromPlainText(setup, reader);
 		for(int i = 0; i < tileCount; i++) {
-			TilePosition pos = new TilePosition(i % 4, i / 4);
+			TilePosition pos = new TilePosition(i % dimension, i / dimension);
 			tiles[i] = tileFromReader.readTile(pos);
 		}
 		

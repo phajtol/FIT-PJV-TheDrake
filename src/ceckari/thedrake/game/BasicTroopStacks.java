@@ -1,5 +1,7 @@
 package ceckari.thedrake.game;
 
+import ceckari.thedrake.media.TroopStacksMedia;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -29,20 +31,26 @@ public class BasicTroopStacks implements TroopStacks {
 				Collections.unmodifiableList(blueTroops) :
 				Collections.unmodifiableList(orangeTroops);
 	}
-	
+
 
 	@Override
 	public BasicTroopStacks pop(PlayingSide side) {
 		if(side == PlayingSide.BLUE) {
 			return new BasicTroopStacks(blueTroops.subList(1, blueTroops.size()), orangeTroops);
 		}
-		
+
 		return new BasicTroopStacks(blueTroops, orangeTroops.subList(1, orangeTroops.size()));
 	}
-	
+
 
 	public Troop peek(PlayingSide side) {
-		TroopInfo info = side == PlayingSide.BLUE ? blueTroops.get(0) : orangeTroops.get(0); 
+		TroopInfo info = side == PlayingSide.BLUE ? blueTroops.get(0) : orangeTroops.get(0);
 		return new Troop(info, side);
+	}
+
+
+	@Override
+	public <T> T putToMedia(TroopStacksMedia<T> media) {
+		return media.putBasicTroopStacks(this);
 	}
 }

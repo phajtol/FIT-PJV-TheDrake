@@ -15,24 +15,24 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import ceckari.thedrake.BasicTroopStacks;
-import ceckari.thedrake.Board;
-import ceckari.thedrake.BoardMove;
-import ceckari.thedrake.BothLeadersPlaced;
-import ceckari.thedrake.CaptureOnly;
-import ceckari.thedrake.CapturedTroops;
-import ceckari.thedrake.MiddleGameState;
-import ceckari.thedrake.Move;
-import ceckari.thedrake.PlaceFromStack;
-import ceckari.thedrake.PlayingSide;
-import ceckari.thedrake.StandardDrakeSetup;
-import ceckari.thedrake.StepAndCapture;
-import ceckari.thedrake.StepOnly;
-import ceckari.thedrake.Tile;
-import ceckari.thedrake.TilePosition;
-import ceckari.thedrake.Troop;
-import ceckari.thedrake.TroopFace;
-import ceckari.thedrake.TroopTile;
+import ceckari.thedrake.game.BasicTroopStacks;
+import ceckari.thedrake.game.Board;
+import ceckari.thedrake.game.BoardMove;
+import ceckari.thedrake.game.BothLeadersPlaced;
+import ceckari.thedrake.game.CaptureOnly;
+import ceckari.thedrake.game.CapturedTroops;
+import ceckari.thedrake.game.MiddleGameState;
+import ceckari.thedrake.game.Move;
+import ceckari.thedrake.game.PlaceFromStack;
+import ceckari.thedrake.game.PlayingSide;
+import ceckari.thedrake.game.StandardDrakeSetup;
+import ceckari.thedrake.game.StepAndCapture;
+import ceckari.thedrake.game.StepOnly;
+import ceckari.thedrake.game.Tile;
+import ceckari.thedrake.game.TilePosition;
+import ceckari.thedrake.game.Troop;
+import ceckari.thedrake.game.TroopFace;
+import ceckari.thedrake.game.TroopTile;
 
 public class Tester04 {
 

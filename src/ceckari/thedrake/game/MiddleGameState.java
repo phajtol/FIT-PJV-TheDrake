@@ -1,5 +1,7 @@
 package ceckari.thedrake.game;
 
+import ceckari.thedrake.media.GameStateMedia;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -80,8 +82,8 @@ public class MiddleGameState extends BaseGameState {
 	public MiddleGameState placeFromStack(TilePosition target) {
 		Troop troop = troopStacks().peek(sideOnTurn());
 		return new MiddleGameState(
-				board().withTiles(  
-					new TroopTile(target, troop)),  
+				board().withTiles(
+					new TroopTile(target, troop)),
 				troopStacks().pop(sideOnTurn()),
 				leaders(),
 				sideOnTurn().opposite());
@@ -98,4 +100,10 @@ public class MiddleGameState extends BaseGameState {
             return false;
         }
     }
+
+
+	@Override
+	public <T> T putToMedia(GameStateMedia<T> media) {
+		return media.putMiddleGameState(this);
+	}
 }

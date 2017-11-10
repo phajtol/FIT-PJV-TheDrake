@@ -76,7 +76,8 @@ public class PlacingLeadersGameState extends BaseGameState {
 	public boolean isVictory() {
 		return false;
 	}
-	
+
+
 	@Override
 	public <T> T putToMedia(GameStateMedia<T> media) {
 		return media.putPlacingLeadersGameState(this);

@@ -14,15 +14,7 @@ public class Troop {
      *
      */
     private final TroopInfo info;
-
-    /**
-     *
-     */
     private final PlayingSide side;
-
-    /**
-     *
-     */
     private final TroopFace face;
 
 
@@ -44,7 +36,6 @@ public class Troop {
     }
 
     /**
-     *
      * @return
      */
     public TroopInfo info()
@@ -54,7 +45,6 @@ public class Troop {
 
 
     /**
-     *
      * @return
      */
     public PlayingSide side()
@@ -64,7 +54,6 @@ public class Troop {
 
 
     /**
-     *
      * @return
      */
     public TroopFace face()
@@ -74,7 +63,6 @@ public class Troop {
 
 
     /**
-     *
      * @return
      */
     public Offset2D pivot()
@@ -84,7 +72,6 @@ public class Troop {
 
 
     /**
-     *
      * @return
      */
     public Troop flipped()

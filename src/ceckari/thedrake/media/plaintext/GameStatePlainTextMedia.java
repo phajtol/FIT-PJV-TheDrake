@@ -31,8 +31,7 @@ public class GameStatePlainTextMedia extends PrintMedia implements GameStateMedi
 
         state.troopStacks().putToMedia(troopStacksMedia);
         state.leaders().putToMedia(leadersMedia);
-        //state.board().putToMedia(boardMedia);
-        boardMedia.putBoard(state.board());
+        state.board().putToMedia(boardMedia);
 
         return null;
     }
@@ -48,8 +47,7 @@ public class GameStatePlainTextMedia extends PrintMedia implements GameStateMedi
 
         state.troopStacks().putToMedia(troopStacksMedia);
         state.leaders().putToMedia(leadersMedia);
-        //state.board().putToMedia(boardMedia);
-        boardMedia.putBoard(state.board());
+        state.board().putToMedia(boardMedia);
 
         return null;
     }
@@ -65,8 +63,7 @@ public class GameStatePlainTextMedia extends PrintMedia implements GameStateMedi
 
         state.troopStacks().putToMedia(troopStacksMedia);
         state.leaders().putToMedia(leadersMedia);
-        //state.board().putToMedia(boardMedia);
-        boardMedia.putBoard(state.board());
+        state.board().putToMedia(boardMedia);
 
         return null;
     }
@@ -82,8 +79,7 @@ public class GameStatePlainTextMedia extends PrintMedia implements GameStateMedi
 
         state.troopStacks().putToMedia(troopStacksMedia);
         state.leaders().putToMedia(leadersMedia);
-        //state.board().putToMedia(boardMedia);
-        boardMedia.putBoard(state.board());
+        state.board().putToMedia(boardMedia);
 
         return null;
     }

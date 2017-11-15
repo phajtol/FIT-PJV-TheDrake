@@ -20,7 +20,7 @@ public class TilePlainTextMedia extends PrintMedia implements TileMedia<Void> {
     public Void putTroopTile(TroopTile tile) {
         PrintWriter w = writer();
 
-        w.print(
+        w.printf("%s",
                 tile.troop().info().name() +
                 ((tile.troop().side() == PlayingSide.BLUE) ? " BLUE" : " ORANGE") +
                 ((tile.troop().face() == TroopFace.FRONT) ? " FRONT" : " BACK")
@@ -33,7 +33,7 @@ public class TilePlainTextMedia extends PrintMedia implements TileMedia<Void> {
     public Void putEmptyTile(EmptyTile tile) {
         PrintWriter w = writer();
 
-        w.print("empty");
+        w.printf("%s", "empty");
 
         return null;
     }

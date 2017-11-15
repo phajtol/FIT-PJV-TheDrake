@@ -32,9 +32,9 @@ public class LeadersPlainTextMedia extends PrintMedia implements LeadersMedia<Vo
         PrintWriter w = writer();
 
         w.println(
-                "OL" +
-                (leaders.isPlaced(PlayingSide.BLUE) ? leaders.position(PlayingSide.BLUE).toString() : "X")  + " " +
-                (leaders.isPlaced(PlayingSide.ORANGE) ? leaders.position(PlayingSide.ORANGE).toString() : "X")
+                leaders.isPlaced(PlayingSide.BLUE) ?
+                        "OL " + leaders.position(PlayingSide.BLUE).toString() :
+                        "OL X " + leaders.position(PlayingSide.ORANGE).toString()
         );
 
         return null;

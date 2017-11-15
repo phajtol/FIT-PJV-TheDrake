@@ -20,16 +20,14 @@ public class CapturedTroopsPlainTextMedia extends PrintMedia implements Captured
     public Void putCapturedTroops(CapturedTroops captured) {
         PrintWriter w = writer();
 
-        w.print("Captured BLUE: " + captured.troops(PlayingSide.BLUE).size());
-        for(TroopInfo t : captured.troops(PlayingSide.BLUE)) {
-            w.print(t.name());
-            w.println();
-        }
+        w.println("Captured BLUE: " + captured.troops(PlayingSide.BLUE).size());
+        for(TroopInfo t : captured.troops(PlayingSide.BLUE))
+            w.println(t.name());
 
-        w.print("Captured ORANGE: " + captured.troops(PlayingSide.ORANGE).size());
+        w.printf("%s", "Captured ORANGE: " + captured.troops(PlayingSide.ORANGE).size());
         for(TroopInfo t : captured.troops(PlayingSide.ORANGE)) {
-            w.print(t.name());
-            w.println();
+            w.printf("%n");
+            w.printf("%s", t.name());
         }
 
         return null;

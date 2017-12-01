@@ -1,33 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import java.net.URL?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ceckari.thedrake.game.StartMenuController">
+    <stylesheets>
+        <URL value="@StartMenuStyle.css" />
+    </stylesheets>
    <children>
-      <Button layoutX="200.0" layoutY="247.0" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" text="Konec">
+      <ImageView fitHeight="204.0" fitWidth="303.0" layoutX="149.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/drake-logo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="endButton" layoutX="200.0" layoutY="280.0" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="endButton" text="Konec">
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" left="35.0" right="10.0" top="10.0" />
          </padding>
       </Button>
-      <Button layoutX="200.0" layoutY="212.0" maxHeight="200.0" minWidth="200.0" mnemonicParsing="false" text="Hra po internetu">
+      <Button fx:id="networkGameButton" layoutX="200.0" layoutY="236.0" maxHeight="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="networkGameButton" text="Hra po internetu">
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" left="35.0" right="10.0" top="10.0" />
          </padding>
       </Button>
-      <Button layoutX="200.0" layoutY="148.0" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" text="Hra dvou hracu">
+      <Button fx:id="multiplayerButton" layoutX="200.0" layoutY="192.0" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="multiplayerButton" text="Hra dvou hráčů" textAlignment="CENTER">
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" left="35.0" right="10.0" top="10.0" />
          </padding>
       </Button>
-      <Button layoutX="200.0" layoutY="183.0" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" prefWidth="200.0" text="Hra proti pocitaci">
+      <Button fx:id="singleplayerButton" layoutX="200.0" layoutY="149.0" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" prefWidth="200.0" styleClass="singleplayerButton" text="Hra proti počítači">
          <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" left="35.0" right="10.0" top="10.0" />
          </padding>
       </Button>
+      <Label layoutX="386.0" layoutY="369.0" text="Peter Hajtol &amp; Tadeáš Friedrich" />
+      <Label layoutX="14.0" layoutY="369.0" text="ceckari" />
    </children>
-</Pane>
+</AnchorPane>

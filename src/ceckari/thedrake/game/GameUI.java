@@ -15,10 +15,10 @@ public class GameUI extends Application{
     @Override
     public void start(Stage stage) throws Exception {
                 Parent root = FXMLLoader.load(getClass().getResource("StartMenu.fxml"));
-        
+        root.setId("pane");
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("App");
+        stage.setTitle("The Drake");
         stage.show();
     }
     

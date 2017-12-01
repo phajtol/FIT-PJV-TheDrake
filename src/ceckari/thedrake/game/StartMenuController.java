@@ -4,6 +4,7 @@ package ceckari.thedrake.game;
 import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
@@ -20,13 +21,14 @@ public class StartMenuController implements Initializable{
     @FXML private Pane pane;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        endButton.setOnMouseReleased(new EventHandler<MouseEvent>(){
+        endButton.setOnAction(new EventHandler(){
             @Override
-            public void handle(MouseEvent event) {
+            public void handle(Event event) {
                 System.exit(0);
             }
         });
     }
+
     /*
     public void endButtonPress(ActionEvent event){
         //System.out.println("x");

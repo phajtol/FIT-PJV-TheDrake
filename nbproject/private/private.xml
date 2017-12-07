@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/peter/git/PJV-TheDrake/test/test/TestSuite.java</file>
-            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/CaptureOnly.java</file>
-            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/Board.java</file>
-            <file>file:/Users/peter/git/PJV-TheDrake/test/test/Tester04.java</file>
-            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/StepOnly.java</file>
-            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/StepAndCapture.java</file>
+            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/game/StartMenuController.java</file>
+            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/game/StartMenuStyle.css</file>
+            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/game/StartMenu.fxml</file>
+            <file>file:/Users/peter/git/PJV-TheDrake/src/ceckari/thedrake/game/GameUI.java</file>
         </group>
     </open-files>
 </project-private>

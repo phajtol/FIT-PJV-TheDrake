@@ -1,0 +1,23 @@
+#pane {
+ -fx-background-image: url('assets/theduke.jpg');
+}
+.singleplayerButton {
+ -fx-background-image: url('assets/singleplayer_icon.png');
+}
+.multiplayerButton {
+  -fx-background-image: url('assets/multiplayer_icon.png');
+}
+.networkGameButton {
+  -fx-background-image: url('assets/network_icon.png');
+}
+.endButton {
+  -fx-background-image: url('assets/exit_icon.png');
+}
+
+.networkGameButton, .singleplayerButton, .multiplayerButton, .endButton {
+    /*-fx-alignment: LEFT;*/
+    -fx-backround-size: 10px 10px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 5px 5px;
+    
+}

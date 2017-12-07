@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<AnchorPane fx:id="root" maxHeight="400.0" maxWidth="800.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ceckari.thedrake.game.StartMenuController">
+    <stylesheets>
+        <URL value="@StartMenuStyle.css" />
+    </stylesheets>
+   <children>
+      <ImageView fx:id="drakelogo" fitHeight="175.0" fitWidth="351.0" layoutX="226.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/drake-logo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="endButton" layoutX="301.0" layoutY="299.0" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="endButton" text="Konec">
+         <padding>
+            <Insets bottom="10.0" left="35.0" right="10.0" top="10.0" />
+         </padding>
+      </Button>
+      <Button fx:id="networkGameButton" layoutX="301.0" layoutY="261.0" maxHeight="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="networkGameButton" text="Hra po internetu">
+         <padding>
+            <Insets bottom="10.0" left="35.0" right="10.0" top="10.0" />
+         </padding>
+      </Button>
+      <Button fx:id="multiplayerButton" layoutX="301.0" layoutY="223.0" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" styleClass="multiplayerButton" text="Hra dvou hráčů" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="35.0" right="10.0" top="10.0" />
+         </padding>
+      </Button>
+      <Button fx:id="singleplayerButton" layoutX="301.0" layoutY="185.0" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" prefWidth="200.0" styleClass="singleplayerButton" text="Hra proti počítači">
+         <padding>
+            <Insets bottom="10.0" left="35.0" right="10.0" top="10.0" />
+         </padding>
+      </Button>
+      <Label layoutX="594.0" layoutY="469.0" text="Peter Hajtol &amp; Tadeáš Friedrich" />
+      <Label fx:id="ceckariLabel" layoutX="14.0" layoutY="469.0" text="ceckari" />
+   </children>
+</AnchorPane>

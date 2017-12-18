@@ -42,7 +42,7 @@ public class TheDrakeApplication extends Application {
 	
 	BoardView boardView = new BoardView(state);
         BorderPane borderPane = new BorderPane();
-        bottomLabel = new Label(state.sideOnTurn() == PlayingSide.BLUE ? "Modrý" : "Oranžový" + " je na ťahu.");
+        bottomLabel = new Label((state.sideOnTurn() == PlayingSide.BLUE ? "Modrý" : "Oranžový") + " je na ťahu.");
         
         borderPane.setTop(new ImageView(new Image(getClass().getResource("assets/drake-logo.png").toExternalForm()) ));
         borderPane.setCenter(boardView);

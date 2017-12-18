@@ -1,5 +1,6 @@
-package ceckari.thedrake.game;
+package ceckari.thedrake.ui;
 
+import ceckari.thedrake.game.*;
 import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
